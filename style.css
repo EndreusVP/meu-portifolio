@@ -57,7 +57,7 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
   transition: background var(--transition), color var(--transition);
   scrollbar-width: thin;
   scrollbar-color: var(--yellow) var(--card);
@@ -70,7 +70,7 @@ body::-webkit-scrollbar-thumb { background: var(--yellow); border-radius: 4px; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
-button { cursor: none; border: none; background: none; font-family: var(--font-body); }
+button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
 
 /* ---- CUSTOM CURSOR ---- */
 .cursor {
@@ -606,7 +606,7 @@ body.cursor-hover .cursor-follower { width: 52px; height: 52px; opacity: 0.3; }
   padding: 20px 16px;
   text-align: center;
   position: relative;
-  cursor: none;
+  cursor: pointer;
   transition: all var(--transition);
   overflow: hidden;
 }
@@ -1108,7 +1108,7 @@ body.cursor-hover .cursor-follower { width: 52px; height: 52px; opacity: 0.3; }
   border: 2px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  cursor: none;
+  cursor: pointer;
   transition: all var(--transition);
 }
 .game-card:hover {
@@ -1422,7 +1422,7 @@ body.cursor-hover .cursor-follower { width: 52px; height: 52px; opacity: 0.3; }
 .game-bug {
   position: absolute;
   font-size: 1.8rem;
-  cursor: none;
+  cursor: pointer;
   animation: bugWander 3s ease-in-out infinite;
   z-index: 10;
   transition: transform 0.1s;
@@ -1446,7 +1446,7 @@ body.cursor-hover .cursor-follower { width: 52px; height: 52px; opacity: 0.3; }
   color: var(--teal);
   padding: 6px 14px;
   border-radius: 8px;
-  cursor: none;
+  cursor: pointer;
   transition: all 0.1s;
   border: 2px solid var(--teal);
   user-select: none;
@@ -1479,7 +1479,7 @@ body.cursor-hover .cursor-follower { width: 52px; height: 52px; opacity: 0.3; }
 .quack-duck {
   width: 180px;
   border-radius: 16px;
-  cursor: none;
+  cursor: pointer;
   transition: transform 0.1s, filter 0.2s;
   filter: drop-shadow(0 8px 24px rgba(255,209,102,0.4));
 }

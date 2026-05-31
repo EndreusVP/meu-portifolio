@@ -137,7 +137,6 @@ let startTime = Date.now();
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme(currentTheme);
   applyLang(currentLang);
-  initCursor();
   initScrollEffects();
   initIntersectionObserver();
   initTypewriter();
@@ -179,7 +178,6 @@ function applyLang(lang) {
   });
   const flag = document.getElementById('langFlag');
   const label = document.getElementById('langLabel');
-  if (flag) flag.textContent = lang === 'pt' ? '🇧🇷' : '🇬🇧';
   if (label) label.textContent = lang === 'pt' ? 'PT' : 'EN';
   localStorage.setItem('pato-lang', lang);
   // Re-init typewriter words
@@ -189,34 +187,6 @@ function applyLang(lang) {
 document.getElementById('langToggle')?.addEventListener('click', () => {
   applyLang(currentLang === 'pt' ? 'en' : 'pt');
 });
-
-// ============================================================
-// CUSTOM CURSOR
-// ============================================================
-function initCursor() {
-  const cursor = document.getElementById('cursor');
-  const follower = document.getElementById('cursorFollower');
-  let mx = 0, my = 0, fx = 0, fy = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    if (cursor) { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; }
-  });
-
-  function followCursor() {
-    fx += (mx - fx) * 0.12;
-    fy += (my - fy) * 0.12;
-    if (follower) { follower.style.left = fx + 'px'; follower.style.top = fy + 'px'; }
-    requestAnimationFrame(followCursor);
-  }
-  followCursor();
-
-  // Hover effects
-  document.querySelectorAll('a, button, .skill-card, .project-card, .game-card, .drag-item, .pricing-card').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-  });
-}
 
 // ============================================================
 // SCROLL EFFECTS
